@@ -18,19 +18,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </head>
   <body>
 
-    <p>An example of <code>&lt;hump-day&gt;</code>:</p>
-
-    <button>Say Something</button>
-
-    <hump-day author='{"name": "Lord Meowser", "image": "http://placekitten.com/g/200/300"}' fancy>
-      <h2>Hello hump-day</h2>
-    </hump-day>
-
-    <script>
-      document.querySelector('button').addEventListener('click', function() {
-        alert(document.querySelector('hump-day').sayHello('Hallo!'));
-      });
-    </script>
+    <span> Is it Monday? <span>
+    <hump-day hump-day=1></hump-day>
+    <br/>
+    <span> Is it Tuesday? <span>
+    <hump-day hump-day=2></hump-day>
+    <br/>
+    <span> Is it Wednesday? <span>
+    <hump-day hump-day=3></hump-day>
+    <br/>
+    <span> Is it Thursday? <span>
+    <hump-day hump-day=4></hump-day>
+    <br/>
+    <span> Is it Friday? <span>
+    <hump-day hump-day=5></hump-day>
+    <br/>
+    <span> Is it Saturday? <span>
+    <hump-day hump-day=6></hump-day>
+    <br/>
+    <span> Is it Sunday? <span>
+    <hump-day hump-day=7></hump-day>
+    
 
   </body>
 </html>

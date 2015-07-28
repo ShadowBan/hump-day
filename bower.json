@@ -2,18 +2,17 @@
   "name": "hump-day",
   "version": "1.0.0",
   "authors": [
-    "Anonymous <anonymous@example.com>"
+    "Chris Kincanon <chris.kincanon@gmail.com>"
   ],
-  "description": "An element providing a solution to no problem in particular.",
+  "description": "Element for displaying if it is a certian day or not.",
   "keywords": [
     "web-component",
     "web-components",
-    "polymer",
-    "seed"
+    "polymer"
   ],
   "main": "hump-day.html",
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/<USERNAME>/seed-element/",
+  "homepage": "https://github.com/ShadowBan/hump-day/",
   "ignore": [
     "/.*",
     "/test/",
