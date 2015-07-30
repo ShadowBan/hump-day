@@ -2,6 +2,9 @@
 
 An element that prints out either Yes or No depeneding on if hump-day (as defined) is today.
 
+## Documentation
+ 
+[http://shadowban.github.io/hump-day/components/hump-day/](http://shadowban.github.io/hump-day/components/hump-day/)
 
 ## Dependencies
 
