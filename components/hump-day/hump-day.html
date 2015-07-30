@@ -1,0 +1,115 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+An element that prints out either Yes or No depeneding on if hump-day (as defined) is today.
+
+Example:
+
+    <hump-day hump-day=4></hump-day>
+
+@demo
+-->
+<dom-module id="hump-day">
+
+  <style>
+    
+  </style>
+
+  <template>
+    <template is="dom-if" if="{{todayIsTheDay}}">
+      YES!
+    </template>
+    <template is="dom-if" if="{{!todayIsTheDay}}">
+      No!
+    </template>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'hump-day',
+
+    properties: {
+      /**
+       * Stores the current weekday value.
+       * 1-7 starting on Monday
+       */
+      today:{
+        type: Number,
+        readOnly: true,
+        value:  function(){
+          var today = new Date();
+          return today.getDay();
+         }
+      },
+
+        /**
+       * Stores if hump day is today!
+       */
+      todayIsTheDay:{
+        type: Boolean,
+        reflectToAttribute: true,
+        readOnly: true,
+        computed: "_isItToday(today,humpDay)"
+      },
+
+      /**
+       * Sets the day of the week that we want to check for
+       * Uses number to represent the day of the week 1-7 
+       * starting on Monday
+       */
+       humpDay:{
+          type: Number,
+          value: null
+       },
+
+        /**
+       * Number in nano seconds that sets how often the
+       * element should check what day it is.
+       */
+       interval: {
+        type: Number,
+        value: 1000
+      }
+
+    },
+
+    // Element Lifecycle
+
+    ready: function() {
+      var that = this;
+      setInterval(function(){
+        var today = new Date();
+        that._setToday(today.getDay());
+      }, this.interval)
+    },
+
+    /**
+     * function used as a computed property to determin
+     * if today and humpDay match
+     *
+     * @return {bool} is hump-day today or not?
+     */
+    _isItToday: function(today,humpDay) {
+      return today === humpDay;
+    }
+
+  });
+
+</script>
+
+
+
+     
